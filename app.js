@@ -53,6 +53,9 @@ store.on("error",()=>{
         httpOnly:true
     },
  };
+app.get("/", (req, res) => {
+  res.render("listings/home"); 
+});
 
 
 app.use(session(sessionOptions));

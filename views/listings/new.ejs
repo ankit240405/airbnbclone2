@@ -3,47 +3,95 @@
 <div class="row mt-3">
 <div class="col-8 offset-2">
     <br/><br/>
-<h3>Create a new listing</h3>
-<form  class="needs-validation" novalidate method="POST" action="/listings" enctype="multipart/form-data" >
-<div class="mb-3">
-<label for="title"class="form-label">Title</label>
-<input name="listing[title]" placeholder="Enter Title" type="text"class="form-control" required/>
-<div class="valid-feedback">Title looks good!!</div>
+<h3 class="text-center mb-4" style="color: #2c3e50; font-weight: 700; background: linear-gradient(135deg, #fe424d, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Create a new listing</h3>
+<form  class="needs-validation" novalidate method="POST" action="/listings" enctype="multipart/form-data" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); padding: 2.5rem; border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.9);">
+<div class="mb-4">
+<label for="title"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">Title</label>
+<input name="listing[title]" placeholder="Enter Title" type="text"class="form-control" required style="padding: 0.75rem 1rem; border: 2px solid #e9ecef; border-radius: 12px; transition: all 0.3s ease; font-size: 1rem;"/>
+<div class="valid-feedback" style="color: #28a745; font-weight: 500;">Title looks good!!</div>
 </div>      
-<div class="mb-3">
-<label for="description"class="form-label">Description</label>
-<textarea name="listing[description]"class="form-control" required ></textarea>
-<div class="invalid-feedback">Please enter a short description </div>
-
+<div class="mb-4">
+<label for="description"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">Description</label>
+<textarea name="listing[description]"class="form-control" required style="padding: 0.75rem 1rem; border: 2px solid #e9ecef; border-radius: 12px; transition: all 0.3s ease; min-height: 120px; resize: vertical; font-size: 1rem;"></textarea>
+<div class="invalid-feedback" style="color: #fe424d; font-weight: 500;">Please enter a short description </div>
 </div>
-<div class="mb-3">
-<label for="image"class="form-label">Upload Image</label>
-<input name="listing[image]" type="file" class="form-control">
+<div class="mb-4">
+<label for="image"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">Upload Image</label>
+<input name="listing[image]" type="file" class="form-control" style="padding: 0.75rem 1rem; border: 2px solid #e9ecef; border-radius: 12px; transition: all 0.3s ease; background: white;">
 </div>
 <div class="row">
-<div class="mb-3 col-md-4 ">
-<label for="price"class="form-label">Price</label>
-<input name="listing[price]" placeholder="Enter Price" class="form-control"required>
-<div class="invalid-feedback">Please enter a valid price!!</div>
-
+<div class="mb-4 col-md-4 ">
+<label for="price"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">Price</label>
+<input name="listing[price]" placeholder="Enter Price" class="form-control"required style="padding: 0.75rem 1rem; border: 2px solid #e9ecef; border-radius: 12px; transition: all 0.3s ease; font-size: 1rem;">
+<div class="invalid-feedback" style="color: #fe424d; font-weight: 500;">Please enter a valid price!!</div>
 </div>
-<div class="mb-3 col-md-8 ">
-<label for="country"class="form-label">Country</label>
-<input name="listing[country]" placeholder="Enter Country" type="text" class="form-control" required>
-<div class="invalid-feedback">Please enter a valid country name!!</div>
+<div class="mb-4 col-md-8 ">
+<label for="country"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">Country</label>
+<input name="listing[country]" placeholder="Enter Country" type="text" class="form-control" required style="padding: 0.75rem 1rem; border: 2px solid #e9ecef; border-radius: 12px; transition: all 0.3s ease; font-size: 1rem;">
+<div class="invalid-feedback" style="color: #fe424d; font-weight: 500;">Please enter a valid country name!!</div>
 </div>
 </div>
-<div class="mb-3">
-<label for="location"class="form-label" required>Location</label>
-<input name="listing[location]" placeholder="Enter Location" type="text" class="form-control"required>
-<div class="invalid-feedback">Please enter a valid location!! </div>
-
+<div class="mb-4">
+<label for="location"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">Location</label>
+<input name="listing[location]" placeholder="Enter Location" type="text" class="form-control"required style="padding: 0.75rem 1rem; border: 2px solid #e9ecef; border-radius: 12px; transition: all 0.3s ease; font-size: 1rem;">
+<div class="invalid-feedback" style="color: #fe424d; font-weight: 500;">Please enter a valid location!! </div>
 </div>
 <br /> <br/>
-<button class="btn btn-dark add-btn mt-3">Add</button>
+<button class="btn btn-dark add-btn mt-3" style="width: 100%; padding: 1rem 2rem; font-size: 1.1rem; font-weight: 600; border-radius: 50px; background: linear-gradient(135deg, #fe424d 0%, #ff6b6b 100%) !important; border: none !important; box-shadow: 0 8px 25px rgba(254, 66, 77, 0.3) !important; transition: all 0.3s ease !important;">Add Listing</button>
 <br /> <br/>
-
 </form>
  </div>
 </div>
+
+<style>
+.form-control {
+    transition: all 0.3s ease !important;
+}
+
+.form-control:focus {
+    border-color: #fe424d !important;
+    box-shadow: 0 0 0 0.3rem rgba(254, 66, 77, 0.15) !important;
+    transform: translateY(-2px);
+}
+
+.form-control:hover {
+    border-color: #fe424d !important;
+}
+
+.add-btn:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 30px rgba(254, 66, 77, 0.4) !important;
+    background: linear-gradient(135deg, #ff6b6b 0%, #fe424d 100%) !important;
+}
+
+.form-label {
+    transition: color 0.3s ease;
+}
+
+.form-control:focus + .form-label {
+    color: #fe424d;
+}
+
+.valid-feedback {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.form-control:valid + .valid-feedback {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.invalid-feedback {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.form-control:invalid:focus + .invalid-feedback {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
 </body>

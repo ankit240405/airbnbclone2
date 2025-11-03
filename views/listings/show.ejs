@@ -1,89 +1,138 @@
 <% layout("/layouts/boilerplate") %>
 <body>
-<div class="row mt3">
+<div class="row mt-3">
     <div class="col-8 offset-3">
-
-    
-    <h3><%=listing.title%></h3>
-</div>
-  <div class="card col-6 offset-3 show-card">
-  <img src="<%=listing.image.url%>" class="card-img-top show-img" alt="listing_img">
-  <div class="card-body">
-  <p class="card-text">
-    <p class="card-text"><i>Owned By - <%=listing.owner.username%></i></p>
-    <br/>
-<p class="card-text"><%=listing.description%></p>
-<p class="card-text">&#8377;<%= listing.price != null ? listing.price.toLocaleString("en-IN") : "N/A" %></p>
- <p class="card-text"><%=listing.location%></p>
- <p class="card-text"><%=listing.country%></p>
-</p>
-  </div>
+        <h3 class="mb-4" style="color: #2c3e50; font-weight: 700; background: linear-gradient(135deg, #fe424d, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.5rem;"><%=listing.title%></h3>
     </div>
+    
+    <div class="card col-6 offset-3 show-card" style="border-radius: 25px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15); border: none; transition: all 0.4s ease;">
+        <img src="<%=listing.image.url%>" class="card-img-top show-img" alt="listing_img" style="border-radius: 25px 25px 0 0; height: 400px; object-fit: cover;">
+        <div class="card-body" style="padding: 2rem; background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
+            <p class="card-text" style="color: #666; font-style: italic; font-size: 1.1rem; margin-bottom: 1.5rem;">
+                <i class="fas fa-user" style="color: #fe424d; margin-right: 0.5rem;"></i>Owned By - <span style="color: #2c3e50; font-weight: 600;"><%=listing.owner.username%></span>
+            </p>
+            
+            <p class="card-text" style="color: #555; line-height: 1.6; font-size: 1.1rem; margin-bottom: 1.5rem; background: rgba(254, 66, 77, 0.05); padding: 1.5rem; border-radius: 15px; border-left: 4px solid #fe424d;">
+                <%=listing.description%>
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                <p class="card-text" style="color: #fe424d; font-size: 1.5rem; font-weight: 700; background: rgba(254, 66, 77, 0.1); padding: 1rem; border-radius: 12px; text-align: center;">
+                    &#8377;<%= listing.price != null ? listing.price.toLocaleString("en-IN") : "N/A" %>
+                    <br><small style="font-size: 0.9rem; color: #666; font-weight: 500;">per night</small>
+                </p>
+                
+                <p class="card-text" style="color: #2c3e50; font-size: 1.1rem; background: rgba(52, 152, 219, 0.1); padding: 1rem; border-radius: 12px; text-align: center;">
+                    <i class="fas fa-map-marker-alt" style="color: #3498db; margin-right: 0.5rem;"></i><%=listing.location%>
+                </p>
+                
+                <p class="card-text" style="color: #2c3e50; font-size: 1.1rem; background: rgba(46, 204, 113, 0.1); padding: 1rem; border-radius: 12px; text-align: center;">
+                    <i class="fas fa-flag" style="color: #2ecc71; margin-right: 0.5rem;"></i><%=listing.country%>
+                </p>
+            </div>
+        </div>
+    </div>
+    
     <br>
-   <% if(currUser && listing.owner._id.equals(currUser._id)) {%>
-    <div class="btns">
-            <a href="/listings/<%=listing._id%>/edit" class="btn btn-dark col-1 offset-3 edit-btn">Edit</a>
-            <br/> <br/>
-            <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">
-        <button class="btn btn-dark  offset-5">Delete</button>
-    </form>
-    </div>
-  <%} %>
-    <%if(currUser) {%>
-   <div class="col-8 offset-3 mb-3 mt-3">
-    <hr/>
-    <h4> Leave a Review</h4>
-    <form action="/listings/<%=listing._id%>/reviews"method="POST" novalidate class="needs-validation">
-     
-        <div class="mb-3 mt-3">
-       <label for="rating" class="form-label">Rating</label>
-      <fieldset class="starability-slot">
-  <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
-  <input type="radio" id="first-rate1" name="review[rating]" value="1" />
-  <label for="first-rate1" title="Terrible">1 star</label>
-  <input type="radio" id="first-rate2" name="review[rating]" value="2" />
-  <label for="first-rate2" title="Not good">2 stars</label>
-  <input type="radio" id="first-rate3" name="review[rating]" value="3" />
-  <label for="first-rate3" title="Average">3 stars</label>
-  <input type="radio" id="first-rate4" name="review[rating]" value="4" />
-  <label for="first-rate4" title="Very good">4 stars</label>
-  <input type="radio" id="first-rate5" name="review[rating]" value="5" />
-  <label for="first-rate5" title="Amazing">5 stars</label>
-</fieldset>
-</div>
-      <div class="mb-3 mt-3">
-        <label for="comment"  class="form-label">Comments</label>
-        <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control" required ></textarea>
-        <div class="invalid-feedback">Please add some comments for review</div>
-      </div>
-      <button class="btn btn-outline-dark">Submit</button>
-    </form>
-  <%} %>
-     <hr/>
-    <p><b>All Reviews</b></p>
     
-      <div class="row">
-      <% for( review of listing.review) { %>
-        <div class="card col-5 mb-s ms-3">
-            <div class="card-body">
-            <h5 class="card-title">@<%=review.author.username%></h5>
-            <p class="starability-result" data-rating="<%=review.rating%>">
-
-            <p class="card-text"><%=review.comment%></p>
-
-        </div>
-        <form class="mb-3" method="POST"action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE">
-          <% if(currUser && review.author._id.equals(currUser._id)) {%>
-          <button class="btn btn-sm btn-dark">
-    Delete 
-          </button>
-          <%}%>
+    <% if(currUser && listing.owner._id.equals(currUser._id)) {%>
+    <div class="btns" style="display: flex; gap: 1rem; justify-content: center; margin: 2rem 0;">
+        <a href="/listings/<%=listing._id%>/edit" class="btn btn-dark col-1 offset-3 edit-btn" style="padding: 0.75rem 2rem; border-radius: 50px; font-weight: 600; box-shadow: 0 6px 20px rgba(254, 66, 77, 0.3); transition: all 0.3s ease;">Edit</a>
+        
+        <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">
+            <button class="btn btn-dark offset-5" style="padding: 0.75rem 2rem; border-radius: 50px; font-weight: 600; background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%) !important; border: none; box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3); transition: all 0.3s ease;">Delete</button>
         </form>
-        </div>
-        <% } %>
-    
-   </div>
-   </div>
     </div>
+    <%} %>
     
+    <%if(currUser) {%>
+    <div class="col-8 offset-3 mb-3 mt-3" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); padding: 2.5rem; border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); margin-top: 2rem;">
+        <hr style="border: none; height: 2px; background: linear-gradient(90deg, transparent, #fe424d, transparent); margin: 2rem 0;"/>
+        <h4 style="color: #2c3e50; font-weight: 700; margin-bottom: 2rem; text-align: center;">Leave a Review</h4>
+        
+        <form action="/listings/<%=listing._id%>/reviews" method="POST" novalidate class="needs-validation">
+            <div class="mb-3 mt-3">
+                <label for="rating" class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 1rem; display: block;">Rating</label>
+                <fieldset class="starability-slot" style="display: flex; justify-content: center; gap: 0.5rem; font-size: 2rem;">
+                    <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." style="display: none;"/>
+                    <% for(let i = 1; i <= 5; i++) { %>
+                        <input type="radio" id="first-rate<%=i%>" name="review[rating]" value="<%=i%>" style="display: none;"/>
+                        <label for="first-rate<%=i%>" title="<%=i%> star" style="cursor: pointer; color: #ddd; transition: all 0.3s ease; font-size: 2.5rem;" onmouseover="this.style.color='#ffd700'" onmouseout="this.style.color='#ddd'">★</label>
+                    <% } %>
+                </fieldset>
+            </div>
+            
+            <div class="mb-3 mt-3">
+                <label for="comment" class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">Comments</label>
+                <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control" required style="padding: 1rem; border: 2px solid #e9ecef; border-radius: 15px; transition: all 0.3s ease; font-size: 1rem;"></textarea>
+                <div class="invalid-feedback" style="color: #fe424d; font-weight: 500;">Please add some comments for review</div>
+            </div>
+            
+            <button class="btn btn-outline-dark" style="padding: 0.75rem 2rem; border-radius: 50px; font-weight: 600; border: 2px solid #fe424d; color: #fe424d; transition: all 0.3s ease; width: 100%;">Submit Review</button>
+        </form>
+    </div>
+    <%} %>
+    
+    <div class="col-8 offset-3 mb-3 mt-3">
+        <hr style="border: none; height: 2px; background: linear-gradient(90deg, transparent, #fe424d, transparent); margin: 2rem 0;"/>
+        <p style="color: #2c3e50; font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem;">All Reviews</p>
+        
+        <div class="row" style="gap: 1.5rem;">
+            <% for( review of listing.review) { %>
+            <div class="card col-5 mb-3" style="border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: none; transition: all 0.3s ease; background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
+                <div class="card-body" style="padding: 1.5rem;">
+                    <h5 class="card-title" style="color: #fe424d; font-weight: 600; margin-bottom: 1rem;">@<%=review.author.username%></h5>
+                    
+                    <div class="starability-result" style="color: #ffd700; font-size: 1.2rem; margin-bottom: 1rem;">
+                        <% for(let i = 1; i <= 5; i++) { %>
+                            <span style="color: <%= i <= review.rating ? '#ffd700' : '#ddd' %>;">★</span>
+                        <% } %>
+                        <span style="color: #666; font-size: 0.9rem; margin-left: 0.5rem;">(<%=review.rating%>/5)</span>
+                    </div>
+                    
+                    <p class="card-text" style="color: #555; line-height: 1.5; background: rgba(254, 66, 77, 0.05); padding: 1rem; border-radius: 12px; border-left: 3px solid #fe424d;">
+                        <%=review.comment%>
+                    </p>
+                </div>
+                
+                <form class="mb-3" method="POST" action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE" style="padding: 0 1.5rem;">
+                    <% if(currUser && review.author._id.equals(currUser._id)) {%>
+                    <button class="btn btn-sm btn-dark" style="padding: 0.5rem 1rem; border-radius: 25px; font-weight: 500; background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%) !important; border: none; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); transition: all 0.3s ease;">
+                        Delete Review
+                    </button>
+                    <%} %>
+                </form>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<style>
+.form-control:focus {
+    border-color: #fe424d !important;
+    box-shadow: 0 0 0 0.3rem rgba(254, 66, 77, 0.15) !important;
+    transform: translateY(-2px);
+}
+
+.btn:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2) !important;
+}
+
+.starability-slot input[type="radio"]:checked + label {
+    color: #ffd700 !important;
+    transform: scale(1.2);
+}
+
+.starability-slot label:hover {
+    color: #ffd700 !important;
+    transform: scale(1.3);
+}
+</style>
 </body>

@@ -1,14 +1,20 @@
 <style>
   .search-btn {
-    background-color: #fe424d;
+    background: linear-gradient(135deg, #fe424d 0%, #ff6b6b 100%);
     color: #ffffff;
     border-radius: 25px;
-    padding: 0 1rem 0 1rem;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(254, 66, 77, 0.3);
+    transition: all 0.3s ease;
   }
 
-  .search-btn :hover {
-    background-color: #fe424d;
+  .search-btn:hover {
+    background: linear-gradient(135deg, #ff6b6b 0%, #fe424d 100%);
     color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(254, 66, 77, 0.4);
   }
 
   .search-btn i {
@@ -18,23 +24,36 @@
 
   .search-inp {
     border-radius: 25px;
-    padding: 0.5rem 3rem 0.5rem 3rem;
+    padding: 0.5rem 1.5rem;
     font-size: 1rem;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+  }
+
+  .search-inp:focus {
+    border-color: #fe424d;
+    box-shadow: 0 0 0 0.2rem rgba(254, 66, 77, 0.15);
+    transform: translateY(-1px);
+  }
+
+  .search-inp:hover {
+    border-color: #fe424d;
   }
 </style>
-<nav class="navbar navbar-expand-md navbar-light border-bottom sticky-top">
+<nav class="navbar navbar-expand-md navbar-light border-bottom sticky-top" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.9) !important;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"
-      ><i class="fa-brands fa-airbnb"></i
-    ></a>
+    <a class="navbar-brand" href="/listings" style="font-size: 1.8rem; color: #fe424d; font-weight: 700; transition: all 0.3s ease;">
+      <i class="fa-brands fa-airbnb" style="filter: drop-shadow(0 2px 4px rgba(254, 66, 77, 0.3)); transition: transform 0.3s ease;"></i>
+    </a>
     <div class="navbar-nav">
-      <a class="nav-link" href="/listings">Explore</a>
+      <a class="nav-link" href="/listings" style="font-weight: 500; padding: 0.5rem 1rem; border-radius: 25px; transition: all 0.3s ease;">Home</a>
     </div>
     <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarNavAltMarkup"
+      style="border: 2px solid #fe424d;"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -45,6 +64,7 @@
             class="form-control me-2 search-inp"
             type="search"
             placeholder="Search destinations"
+            style="min-width: 250px;"
           />
           <button class="btn search-btn" type="submit">
             <i class="fa-solid fa-magnifying-glass"></i>Search
@@ -53,12 +73,12 @@
       </div>
 
       <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new">Airbnb your home</a>
+        <a class="nav-link" href="/listings/new" style="font-weight: 500; padding: 0.5rem 1rem; border-radius: 25px; transition: all 0.3s ease;">Airbnb your home</a>
         <% if(!currUser) {%>
-        <a class="nav-link" href="/signup"><b>Sign up</b></a>
-        <a class="nav-link" href="/login"><b>Log in</b></a
+        <a class="nav-link" href="/signup" style="font-weight: 600; padding: 0.5rem 1rem; border-radius: 25px; transition: all 0.3s ease;"><b>Sign up</b></a>
+        <a class="nav-link" href="/login" style="font-weight: 600; padding: 0.5rem 1rem; border-radius: 25px; transition: all 0.3s ease;"><b>Log in</b></a
         ><% } %> <% if(currUser) { %>
-        <a class="nav-link" href="/logout"><b>Log out</b></a>
+        <a class="nav-link" href="/logout" style="font-weight: 600; padding: 0.5rem 1rem; border-radius: 25px; transition: all 0.3s ease;"><b>Log out</b></a>
         <% } %>
       </div>
     </div>
