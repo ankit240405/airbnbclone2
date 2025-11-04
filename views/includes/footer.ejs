@@ -1,11 +1,19 @@
 <footer>
     <div class="f-info" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); color: white; border-top: 1px solid rgba(255,255,255,0.1);">
-    <div class="f-info-socials">
-        <i class="fa-brands fa-facebook" style="margin-right: 1rem; font-size: 1.2rem; padding: 0.5rem; border-radius: 50%; background: rgba(255,255,255,0.2); transition: all 0.3s ease; cursor: pointer;"></i>
-        <i class="fa-brands fa-instagram" style="margin-right: 1rem; font-size: 1.2rem; padding: 0.5rem; border-radius: 50%; background: rgba(255,255,255,0.2); transition: all 0.3s ease; cursor: pointer;"></i>
+   <div class="f-info-socials">
+    <i class="fa-brands fa-facebook" style="margin-right: 1rem; font-size: 1.2rem; padding: 0.5rem; border-radius: 50%; background: rgba(255,255,255,0.2); transition: all 0.3s ease; cursor: pointer;"></i>
+    <i class="fa-brands fa-instagram" style="margin-right: 1rem; font-size: 1.2rem; padding: 0.5rem; border-radius: 50%; background: rgba(255,255,255,0.2); transition: all 0.3s ease; cursor: pointer;"></i>
+    <a href="https://www.linkedin.com/in/ankit-sharma-a94903313/" target="_blank" class="social-link">
         <i class="fa-brands fa-linkedin" style="margin-right: 1rem; font-size: 1.2rem; padding: 0.5rem; border-radius: 50%; background: rgba(255,255,255,0.2); transition: all 0.3s ease; cursor: pointer;"></i>
-    </div>
+    </a>
+      <a href="https://github.com/ankit240405" target="_blank" class="social-link">
+        <i class="fa-brands fa-github" style="margin-right: 1rem; font-size: 1.2rem; padding: 0.5rem; border-radius: 50%; background: rgba(255,255,255,0.2); transition: all 0.3s ease; cursor: pointer;"></i>
+    </a>
+    
+</div>
     <div class="f-info-brand" style="font-weight: 600; font-size: 1.1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"> &copy;SereneStay Private Limited</div>
+        <div class="f-info-brand" style="font-weight: 600; font-size: 1.1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"> Made by Ankit Sharma</div>
+
     <div class="f-info-links">
         <a href="/privacy" style="text-decoration: none; color: white; font-weight: 500; padding: 0.5rem 1rem; border-radius: 20px; transition: all 0.3s ease;">Privacy</a>
         <a href="/terms" style="text-decoration: none; color: white; font-weight: 500; padding: 0.5rem 1rem; border-radius: 20px; transition: all 0.3s ease;">Terms</a>
@@ -14,7 +22,29 @@
 </footer>
 
 <style>
-.f-info-socials i:hover {
+/* Reset link styles for social links */
+.social-link {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+.social-link:visited {
+    color: inherit !important;
+}
+
+.social-link:hover {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+/* Social icon hover effects */
+.f-info-socials i,
+.f-info-socials a i {
+    color: white !important;
+}
+
+.f-info-socials i:hover,
+.f-info-socials a:hover i {
     background: #fe424d !important;
     color: white !important;
     transform: translateY(-3px) scale(1.1);
