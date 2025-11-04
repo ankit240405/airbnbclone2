@@ -1,43 +1,43 @@
 <% layout("/layouts/boilerplate") %>
 <body>
-<div class="row mt-3">
-<div class="col-8 offset-2">
+<div class="row mt-3 mx-0">
+<div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 px-3">
     <br/><br/>
-<h3 class="text-center mb-4" style="color: #2c3e50; font-weight: 700; background: linear-gradient(135deg, #fe424d, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Create a new listing</h3>
-<form  class="needs-validation" novalidate method="POST" action="/listings" enctype="multipart/form-data" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); padding: 2.5rem; border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.9);">
+<h3 class="text-center mb-4 w-100" style="color: #2c3e50; font-weight: 700; background: linear-gradient(135deg, #fe424d, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: clamp(1.5rem, 4vw, 2.2rem);">Create a new listing</h3>
+<form  class="needs-validation" novalidate method="POST" action="/listings" enctype="multipart/form-data" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); padding: clamp(1.5rem, 3vw, 2.5rem); border-radius: clamp(15px, 3vw, 25px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.9); margin: 0 auto;">
 <div class="mb-4">
-<label for="title"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">Title</label>
-<input name="listing[title]" placeholder="Enter Title" type="text"class="form-control" required style="padding: 0.75rem 1rem; border: 2px solid #e9ecef; border-radius: 12px; transition: all 0.3s ease; font-size: 1rem;"/>
-<div class="valid-feedback" style="color: #28a745; font-weight: 500;">Title looks good!!</div>
+<label for="title"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem; font-size: clamp(0.9rem, 2vw, 1rem);">Title</label>
+<input name="listing[title]" placeholder="Enter Title" type="text"class="form-control" required style="padding: clamp(0.6rem, 2vw, 0.75rem) 1rem; border: 2px solid #e9ecef; border-radius: clamp(8px, 2vw, 12px); transition: all 0.3s ease; font-size: clamp(0.9rem, 2vw, 1rem); width: 100%;"/>
+<div class="valid-feedback" style="color: #28a745; font-weight: 500; font-size: clamp(0.8rem, 1.5vw, 0.9rem);">Title looks good!!</div>
 </div>      
 <div class="mb-4">
-<label for="description"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">Description</label>
-<textarea name="listing[description]"class="form-control" required style="padding: 0.75rem 1rem; border: 2px solid #e9ecef; border-radius: 12px; transition: all 0.3s ease; min-height: 120px; resize: vertical; font-size: 1rem;"></textarea>
-<div class="invalid-feedback" style="color: #fe424d; font-weight: 500;">Please enter a short description </div>
+<label for="description"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem; font-size: clamp(0.9rem, 2vw, 1rem);">Description</label>
+<textarea name="listing[description]"class="form-control" required style="padding: clamp(0.6rem, 2vw, 0.75rem) 1rem; border: 2px solid #e9ecef; border-radius: clamp(8px, 2vw, 12px); transition: all 0.3s ease; min-height: clamp(80px, 15vh, 120px); resize: vertical; font-size: clamp(0.9rem, 2vw, 1rem); width: 100%;"></textarea>
+<div class="invalid-feedback" style="color: #fe424d; font-weight: 500; font-size: clamp(0.8rem, 1.5vw, 0.9rem);">Please enter a short description </div>
 </div>
 <div class="mb-4">
-<label for="image"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">Upload Image</label>
-<input name="listing[image]" type="file" class="form-control" style="padding: 0.75rem 1rem; border: 2px solid #e9ecef; border-radius: 12px; transition: all 0.3s ease; background: white;">
+<label for="image"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem; font-size: clamp(0.9rem, 2vw, 1rem);">Upload Image</label>
+<input name="listing[image]" type="file" class="form-control" style="padding: clamp(0.6rem, 2vw, 0.75rem) 1rem; border: 2px solid #e9ecef; border-radius: clamp(8px, 2vw, 12px); transition: all 0.3s ease; background: white; width: 100%; font-size: clamp(0.8rem, 1.8vw, 0.9rem);">
 </div>
-<div class="row">
-<div class="mb-4 col-md-4 ">
-<label for="price"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">Price</label>
-<input name="listing[price]" placeholder="Enter Price" class="form-control"required style="padding: 0.75rem 1rem; border: 2px solid #e9ecef; border-radius: 12px; transition: all 0.3s ease; font-size: 1rem;">
-<div class="invalid-feedback" style="color: #fe424d; font-weight: 500;">Please enter a valid price!!</div>
+<div class="row mx-0">
+<div class="mb-4 col-12 col-md-6 col-lg-4 px-1">
+<label for="price"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem; font-size: clamp(0.9rem, 2vw, 1rem);">Price</label>
+<input name="listing[price]" placeholder="Enter Price" class="form-control"required style="padding: clamp(0.6rem, 2vw, 0.75rem) 1rem; border: 2px solid #e9ecef; border-radius: clamp(8px, 2vw, 12px); transition: all 0.3s ease; font-size: clamp(0.9rem, 2vw, 1rem); width: 100%;">
+<div class="invalid-feedback" style="color: #fe424d; font-weight: 500; font-size: clamp(0.8rem, 1.5vw, 0.9rem);">Please enter a valid price!!</div>
 </div>
-<div class="mb-4 col-md-8 ">
-<label for="country"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">Country</label>
-<input name="listing[country]" placeholder="Enter Country" type="text" class="form-control" required style="padding: 0.75rem 1rem; border: 2px solid #e9ecef; border-radius: 12px; transition: all 0.3s ease; font-size: 1rem;">
-<div class="invalid-feedback" style="color: #fe424d; font-weight: 500;">Please enter a valid country name!!</div>
+<div class="mb-4 col-12 col-md-6 col-lg-8 px-1">
+<label for="country"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem; font-size: clamp(0.9rem, 2vw, 1rem);">Country</label>
+<input name="listing[country]" placeholder="Enter Country" type="text" class="form-control" required style="padding: clamp(0.6rem, 2vw, 0.75rem) 1rem; border: 2px solid #e9ecef; border-radius: clamp(8px, 2vw, 12px); transition: all 0.3s ease; font-size: clamp(0.9rem, 2vw, 1rem); width: 100%;">
+<div class="invalid-feedback" style="color: #fe424d; font-weight: 500; font-size: clamp(0.8rem, 1.5vw, 0.9rem);">Please enter a valid country name!!</div>
 </div>
 </div>
 <div class="mb-4">
-<label for="location"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">Location</label>
-<input name="listing[location]" placeholder="Enter Location" type="text" class="form-control"required style="padding: 0.75rem 1rem; border: 2px solid #e9ecef; border-radius: 12px; transition: all 0.3s ease; font-size: 1rem;">
-<div class="invalid-feedback" style="color: #fe424d; font-weight: 500;">Please enter a valid location!! </div>
+<label for="location"class="form-label" style="font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem; font-size: clamp(0.9rem, 2vw, 1rem);">Location</label>
+<input name="listing[location]" placeholder="Enter Location" type="text" class="form-control"required style="padding: clamp(0.6rem, 2vw, 0.75rem) 1rem; border: 2px solid #e9ecef; border-radius: clamp(8px, 2vw, 12px); transition: all 0.3s ease; font-size: clamp(0.9rem, 2vw, 1rem); width: 100%;">
+<div class="invalid-feedback" style="color: #fe424d; font-weight: 500; font-size: clamp(0.8rem, 1.5vw, 0.9rem);">Please enter a valid location!! </div>
 </div>
 <br /> <br/>
-<button class="btn btn-dark add-btn mt-3" style="width: 100%; padding: 1rem 2rem; font-size: 1.1rem; font-weight: 600; border-radius: 50px; background: linear-gradient(135deg, #fe424d 0%, #ff6b6b 100%) !important; border: none !important; box-shadow: 0 8px 25px rgba(254, 66, 77, 0.3) !important; transition: all 0.3s ease !important;">Add Listing</button>
+<button class="btn btn-dark add-btn mt-3 w-100" style="padding: clamp(0.8rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem); font-size: clamp(0.9rem, 2vw, 1.1rem); font-weight: 600; border-radius: 50px; background: linear-gradient(135deg, #fe424d 0%, #ff6b6b 100%) !important; border: none !important; box-shadow: 0 6px 20px rgba(254, 66, 77, 0.3) !important; transition: all 0.3s ease !important;">Add Listing</button>
 <br /> <br/>
 </form>
  </div>
@@ -46,11 +46,12 @@
 <style>
 .form-control {
     transition: all 0.3s ease !important;
+    box-sizing: border-box;
 }
 
 .form-control:focus {
     border-color: #fe424d !important;
-    box-shadow: 0 0 0 0.3rem rgba(254, 66, 77, 0.15) !important;
+    box-shadow: 0 0 0 0.2rem rgba(254, 66, 77, 0.15) !important;
     transform: translateY(-2px);
 }
 
@@ -59,8 +60,8 @@
 }
 
 .add-btn:hover {
-    transform: translateY(-3px) !important;
-    box-shadow: 0 12px 30px rgba(254, 66, 77, 0.4) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(254, 66, 77, 0.4) !important;
     background: linear-gradient(135deg, #ff6b6b 0%, #fe424d 100%) !important;
 }
 
@@ -74,7 +75,7 @@
 
 .valid-feedback {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     transition: all 0.3s ease;
 }
 
@@ -85,13 +86,87 @@
 
 .invalid-feedback {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     transition: all 0.3s ease;
 }
 
 .form-control:invalid:focus + .invalid-feedback {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .row.mt-3 {
+        margin-top: 1rem !important;
+    }
+    
+    .col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2 {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
+    form {
+        margin: 0 5px !important;
+        padding: 1.25rem !important;
+    }
+    
+    .row.mx-0 .col-12 {
+        margin-bottom: 0.5rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .row.mt-3 {
+        margin-top: 0.5rem !important;
+    }
+    
+    form {
+        margin: 0 2px !important;
+        padding: 1rem !important;
+        border-radius: 12px !important;
+    }
+    
+    .form-control {
+        padding: 0.5rem 0.8rem !important;
+        border-radius: 8px !important;
+    }
+    
+    .add-btn {
+        border-radius: 40px !important;
+        padding: 0.7rem 1.5rem !important;
+    }
+    
+    br {
+        display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        font-size: 14px;
+    }
+    
+    form {
+        padding: 0.8rem !important;
+    }
+    
+    .mb-4 {
+        margin-bottom: 0.8rem !important;
+    }
+    
+    .form-control {
+        padding: 0.4rem 0.7rem !important;
+    }
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container-fluid {
+    padding-left: 8px;
+    padding-right: 8px;
 }
 </style>
 </body>

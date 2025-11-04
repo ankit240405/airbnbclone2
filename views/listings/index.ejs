@@ -6,33 +6,33 @@
     flex-wrap: wrap;
     align-items: center;
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    padding: 1.5rem;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    margin-bottom: 2rem;
+    padding: clamp(1rem, 2vw, 1.5rem);
+    border-radius: clamp(12px, 3vw, 20px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    margin-bottom: clamp(1rem, 2vw, 2rem);
     border: 1px solid rgba(255,255,255,0.9);
+    gap: 0.5rem;
   }
 
   .filter {
     text-align: center;
-    margin-right: 2rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
     opacity: 0.7;
-    padding: 0.8rem 1.2rem;
-    border-radius: 15px;
+    padding: clamp(0.6rem, 1.5vw, 0.8rem) clamp(0.8rem, 2vw, 1.2rem);
+    border-radius: clamp(10px, 2vw, 15px);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background: rgba(255,255,255,0.7);
     border: 1px solid rgba(254, 66, 77, 0.1);
-    min-width: 80px;
+    min-width: clamp(60px, 12vw, 80px);
+    flex: 1 0 auto;
+    max-width: 100px;
   }
 
   .filter:hover {
     opacity: 1;
     cursor: pointer;
     background: linear-gradient(135deg, #fe424d 0%, #ff6b6b 100%);
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 10px 25px rgba(254, 66, 77, 0.3);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(254, 66, 77, 0.3);
   }
 
   .filter:hover div i {
@@ -46,18 +46,19 @@
   }
 
   .filter div i {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     color: #fe424d;
     transition: all 0.3s ease;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
   }
 
   .filter p {
-    font-size: 0.8rem;
+    font-size: clamp(0.7rem, 1.5vw, 0.8rem);
     font-weight: 500;
     color: #333;
     margin: 0;
     transition: all 0.3s ease;
+    line-height: 1.2;
   }
 
   .tax-info {
@@ -66,8 +67,9 @@
     font-weight: 600;
     background: rgba(254, 66, 77, 0.1);
     padding: 0.2rem 0.5rem;
-    border-radius: 10px;
+    border-radius: 8px;
     animation: fadeIn 0.3s ease;
+    font-size: clamp(0.7rem, 1.5vw, 0.9rem);
   }
 
   @keyframes fadeIn {
@@ -77,26 +79,27 @@
 
   .tax-toggle {
     border: 2px solid rgba(254, 66, 77, 0.3);
-    border-radius: 25px;
-    height: 3.25rem;
-    padding: 1rem 1.5rem;
-    margin-left: 2rem;
+    border-radius: clamp(15px, 3vw, 25px);
+    height: auto;
+    padding: clamp(0.8rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.5rem);
     display: flex;
     align-items: center;
     background: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+    min-width: fit-content;
+    margin-left: 0;
   }
 
   .tax-toggle:hover {
     border-color: #fe424d;
-    box-shadow: 0 6px 20px rgba(254, 66, 77, 0.2);
+    box-shadow: 0 5px 15px rgba(254, 66, 77, 0.2);
     transform: translateY(-2px);
   }
 
   .form-check-input {
-    width: 3rem !important;
-    height: 1.5rem !important;
+    width: clamp(2.5rem, 5vw, 3rem) !important;
+    height: clamp(1.2rem, 2.5vw, 1.5rem) !important;
     background-color: #e9ecef !important;
     border: 2px solid #dee2e6 !important;
     cursor: pointer;
@@ -106,11 +109,11 @@
   .form-check-input:checked {
     background-color: #fe424d !important;
     border-color: #fe424d !important;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   .form-check-input:focus {
-    box-shadow: 0 0 0 0.25rem rgba(254, 66, 77, 0.25) !important;
+    box-shadow: 0 0 0 0.2rem rgba(254, 66, 77, 0.25) !important;
     border-color: #fe424d !important;
   }
 
@@ -119,6 +122,8 @@
     font-weight: 500;
     cursor: pointer;
     transition: color 0.3s ease;
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    white-space: nowrap;
   }
 
   .tax-toggle:hover .form-check-label {
@@ -126,42 +131,45 @@
   }
 
   .row {
-    gap: 2rem 0;
+    gap: clamp(1rem, 2vw, 2rem) 0;
   }
 
   .card.col.listing-card {
     margin-bottom: 0;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: clamp(12px, 2vw, 20px) !important;
+    overflow: hidden;
   }
 
   .card.col.listing-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
   }
 
   .card-img-top {
-    border-radius: 20px 20px 0 0 !important;
-    height: 20rem;
+    border-radius: clamp(12px, 2vw, 20px) clamp(12px, 2vw, 20px) 0 0 !important;
+    height: clamp(15rem, 30vh, 20rem);
     transition: transform 0.4s ease;
+    object-fit: cover;
   }
 
   .listing-card:hover .card-img-top {
-    transform: scale(1.08);
+    transform: scale(1.06);
   }
 
   .card-body {
-    padding: 1.5rem !important;
+    padding: clamp(1rem, 2vw, 1.5rem) !important;
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   }
 
   .card-text {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
     color: #333;
   }
 
   .card-text b {
     color: #2c3e50;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     font-weight: 600;
   }
 
@@ -179,18 +187,96 @@
     align-items: center;
     justify-content: center;
     transition: all 0.4s ease;
-    border-radius: 20px;
+    border-radius: clamp(12px, 2vw, 20px);
   }
 
   .card-img-overlay:hover {
     opacity: 0.95;
     background: linear-gradient(135deg, rgba(254, 66, 77, 0.95) 0%, rgba(255, 165, 0, 0.95) 100%);
   }
+
+  @media (max-width: 768px) {
+    #filters {
+      justify-content: center;
+      gap: 0.3rem;
+    }
+    
+    .filter {
+      min-width: clamp(50px, 10vw, 70px);
+      padding: 0.5rem 0.7rem;
+    }
+    
+    .tax-toggle {
+      margin-top: 1rem;
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .row-cols-sm-1 {
+      gap: 1rem !important;
+    }
+  }
+
+  @media (max-width: 576px) {
+    #filters {
+      padding: 0.8rem;
+      border-radius: 10px;
+    }
+    
+    .filter {
+      min-width: 45px;
+      padding: 0.4rem 0.5rem;
+    }
+    
+    .filter div i {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+    
+    .filter p {
+      font-size: 0.6rem;
+    }
+    
+    .tax-toggle {
+      padding: 0.6rem 0.8rem;
+    }
+    
+    .form-check-label {
+      font-size: 0.75rem;
+    }
+    
+    .card-img-top {
+      height: 12rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    #filters {
+      padding: 0.6rem;
+    }
+    
+    .filter {
+      min-width: 40px;
+      padding: 0.3rem 0.4rem;
+    }
+    
+    .filter div i {
+      font-size: 0.9rem;
+    }
+    
+    .filter p {
+      font-size: 0.55rem;
+    }
+  }
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 </style>
 
 <div id="filters">
   <div class="filter">
-   
     <div><i class="fa-solid fa-fire"></i></div>
     <p>Trending</p>
   </div>
@@ -259,26 +345,27 @@
   </div>
 </div>
 
-<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 mt-3 g-3">
   <% for(let listing of allListings) { %>
-  <a href="/listings/<%= listing._id %>" class="listing-link">
-    <div class="card col listing-card">
-      <img
-        src="<%= listing.image.url %>"
-        class="card-img-top"
-        alt="listing_image"
-        style="height: 20rem"
-      />
-      <div class="card-img-overlay"></div>
-      <div class="card-body">
-        <p class="card-text">
-          <b><%= listing.title %> </b><br />
-          &#8377; <%= listing.price.toLocaleString("en-IN") %> /night
-          <i class="tax-info"> &nbsp; &nbsp; +18% GST</i>
-        </p>
+  <div class="col">
+    <a href="/listings/<%= listing._id %>" class="listing-link">
+      <div class="card listing-card h-100">
+        <img
+          src="<%= listing.image.url %>"
+          class="card-img-top"
+          alt="listing_image"
+        />
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <p class="card-text">
+            <b><%= listing.title %> </b><br />
+            &#8377; <%= listing.price.toLocaleString("en-IN") %> /night
+            <i class="tax-info"> &nbsp; &nbsp; +18% GST</i>
+          </p>
+        </div>
       </div>
-    </div>
-  </a>
+    </a>
+  </div>
   <% } %>
 </div>
 

@@ -2,12 +2,14 @@
   .search-btn {
     background: linear-gradient(135deg, #fe424d 0%, #ff6b6b 100%);
     color: #ffffff;
-    border-radius: 25px;
-    padding: 0.5rem 1.5rem;
+    border-radius: clamp(20px, 4vw, 25px);
+    padding: clamp(0.4rem, 1.5vw, 0.5rem) clamp(1rem, 3vw, 1.5rem);
     border: none;
     font-weight: 600;
     box-shadow: 0 4px 15px rgba(254, 66, 77, 0.3);
     transition: all 0.3s ease;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    white-space: nowrap;
   }
 
   .search-btn:hover {
@@ -20,14 +22,17 @@
   .search-btn i {
     display: inline;
     margin-right: 0.5rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
   }
 
   .search-inp {
-    border-radius: 25px;
-    padding: 0.5rem 1.5rem;
-    font-size: 1rem;
+    border-radius: clamp(20px, 4vw, 25px);
+    padding: clamp(0.4rem, 1.5vw, 0.5rem) clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(0.8rem, 2vw, 1rem);
     border: 2px solid #e9ecef;
     transition: all 0.3s ease;
+    min-width: clamp(150px, 30vw, 250px);
+    width: 100%;
   }
 
   .search-inp:focus {
@@ -40,31 +45,31 @@
     border-color: #fe424d;
   }
 </style>
-<nav class="navbar navbar-expand-md navbar-light border-bottom sticky-top" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.9) !important;">
+<nav class="navbar navbar-expand-lg navbar-light border-bottom sticky-top" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); box-shadow: 0 4px 20px rgba(0,0,0,0.08); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.9) !important; padding: clamp(0.5rem, 2vw, 1rem) clamp(2%, 4vw, 5%);">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/listings" style="font-size: 1.8rem; color: #fe424d; font-weight: 700; transition: all 0.3s ease;">
+    <a class="navbar-brand" href="/listings" style="font-size: clamp(1.3rem, 4vw, 1.8rem); color: #fe424d; font-weight: 700; transition: all 0.3s ease;">
       <i class="fa-brands fa-airbnb" style="filter: drop-shadow(0 2px 4px rgba(254, 66, 77, 0.3)); transition: transform 0.3s ease;"></i>
     </a>
-    <div class="navbar-nav">
-      <a class="nav-link" href="/listings" style="font-weight: 500; padding: 0.5rem 1rem; border-radius: 25px; transition: all 0.3s ease;">Home</a>
+    <div class="navbar-nav d-none d-md-flex">
+      <a class="nav-link" href="/listings" style="font-weight: 500; padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.8rem, 2vw, 1rem); border-radius: 25px; transition: all 0.3s ease; font-size: clamp(0.8rem, 2vw, 1rem);">Home</a>
     </div>
     <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarNavAltMarkup"
-      style="border: 2px solid #fe424d;"
+      style="border: 2px solid #fe424d; padding: 0.3rem 0.5rem;"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav ms-auto">
-        <form class="d-flex">
+      <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <form class="d-flex flex-column flex-md-row gap-2 w-100">
           <input
-            class="form-control me-2 search-inp"
+            class="form-control search-inp"
             type="search"
             placeholder="Search destinations"
-            style="min-width: 250px;"
+            style="min-width: auto;"
           />
           <button class="btn search-btn" type="submit">
             <i class="fa-solid fa-magnifying-glass"></i>Search
@@ -72,15 +77,111 @@
         </form>
       </div>
 
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new" style="font-weight: 500; padding: 0.5rem 1rem; border-radius: 25px; transition: all 0.3s ease;">Airbnb your home</a>
+      <div class="navbar-nav ms-auto flex-row flex-md-row gap-1 gap-md-2 mt-2 mt-md-0">
+        <a class="nav-link" href="/listings/new" style="font-weight: 500; padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.8rem, 2vw, 1rem); border-radius: 25px; transition: all 0.3s ease; font-size: clamp(0.8rem, 2vw, 1rem); text-align: center;">Airbnb your home</a>
         <% if(!currUser) {%>
-        <a class="nav-link" href="/signup" style="font-weight: 600; padding: 0.5rem 1rem; border-radius: 25px; transition: all 0.3s ease;"><b>Sign up</b></a>
-        <a class="nav-link" href="/login" style="font-weight: 600; padding: 0.5rem 1rem; border-radius: 25px; transition: all 0.3s ease;"><b>Log in</b></a
+        <a class="nav-link" href="/signup" style="font-weight: 600; padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.8rem, 2vw, 1rem); border-radius: 25px; transition: all 0.3s ease; font-size: clamp(0.8rem, 2vw, 1rem); text-align: center;"><b>Sign up</b></a>
+        <a class="nav-link" href="/login" style="font-weight: 600; padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.8rem, 2vw, 1rem); border-radius: 25px; transition: all 0.3s ease; font-size: clamp(0.8rem, 2vw, 1rem); text-align: center;"><b>Log in</b></a
         ><% } %> <% if(currUser) { %>
-        <a class="nav-link" href="/logout" style="font-weight: 600; padding: 0.5rem 1rem; border-radius: 25px; transition: all 0.3s ease;"><b>Log out</b></a>
+        <a class="nav-link" href="/logout" style="font-weight: 600; padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.8rem, 2vw, 1rem); border-radius: 25px; transition: all 0.3s ease; font-size: clamp(0.8rem, 2vw, 1rem); text-align: center;"><b>Log out</b></a>
         <% } %>
       </div>
     </div>
   </div>
 </nav>
+
+<style>
+  @media (max-width: 768px) {
+    .navbar-collapse {
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      padding: 1rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-top: 1rem;
+    }
+    
+    .navbar-nav.ms-auto {
+      width: 100%;
+    }
+    
+    .navbar-nav.ms-auto .nav-link {
+      text-align: center !important;
+      margin: 0.2rem 0;
+      width: 100%;
+    }
+    
+    .d-flex.flex-column {
+      width: 100%;
+    }
+    
+    .search-inp {
+      min-width: 100% !important;
+      margin-bottom: 0.5rem;
+    }
+    
+    .search-btn {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .navbar {
+      padding: 0.5rem 3% !important;
+    }
+    
+    .navbar-brand {
+      font-size: 1.2rem !important;
+    }
+    
+    .search-inp {
+      padding: 0.4rem 0.8rem !important;
+      font-size: 0.9rem !important;
+    }
+    
+    .search-btn {
+      padding: 0.4rem 1rem !important;
+      font-size: 0.9rem !important;
+    }
+    
+    .nav-link {
+      padding: 0.3rem 0.6rem !important;
+      font-size: 0.9rem !important;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .navbar-brand {
+      font-size: 1.1rem !important;
+    }
+    
+    .search-inp {
+      padding: 0.3rem 0.6rem !important;
+      font-size: 0.8rem !important;
+    }
+    
+    .search-btn {
+      padding: 0.3rem 0.8rem !important;
+      font-size: 0.8rem !important;
+    }
+    
+    .nav-link {
+      padding: 0.2rem 0.5rem !important;
+      font-size: 0.8rem !important;
+    }
+  }
+
+  .nav-link:hover {
+    color: #fe424d !important;
+    background: rgba(254, 66, 77, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .navbar-brand:hover i {
+    transform: rotate(15deg) scale(1.1);
+  }
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+</style>

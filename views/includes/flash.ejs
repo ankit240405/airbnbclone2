@@ -1,14 +1,55 @@
 <%if(success && success.length>0){%>
-   <div class="alert alert-success alert-dismissible fade show col-6 offset-3 " role="alert">
-  <span><%= success %></span>
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+   <div class="alert alert-success alert-dismissible fade show col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 px-3" role="alert" style="border-radius: clamp(10px, 2vw, 15px); border: none; box-shadow: 0 6px 20px rgba(40, 167, 69, 0.2); background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: clamp(0.8rem, 2vw, 1rem); margin: 1rem auto;">
+  <span style="font-weight: 500; font-size: clamp(0.9rem, 2vw, 1rem);"><%= success %></span>
+  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close" style="font-size: clamp(0.8rem, 1.5vw, 1rem);"></button>
 </div>
 
 <%}%>
 <%if(error && error.length>0){%>
-   <div class="alert alert-danger alert-dismissible fade show col-6 offset-3 " role="alert">
-  <span><%= error %></span>
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+   <div class="alert alert-danger alert-dismissible fade show col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 px-3" role="alert" style="border-radius: clamp(10px, 2vw, 15px); border: none; box-shadow: 0 6px 20px rgba(220, 53, 69, 0.2); background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); color: white; padding: clamp(0.8rem, 2vw, 1rem); margin: 1rem auto;">
+  <span style="font-weight: 500; font-size: clamp(0.9rem, 2vw, 1rem);"><%= error %></span>
+  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close" style="font-size: clamp(0.8rem, 1.5vw, 1rem);"></button>
 </div>
 
 <%}%>
+
+<style>
+@media (max-width: 768px) {
+    .alert {
+        margin: 0.8rem 10px !important;
+        padding: 0.8rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .alert {
+        margin: 0.5rem 5px !important;
+        padding: 0.7rem !important;
+        border-radius: 10px !important;
+    }
+    
+    .alert span {
+        font-size: 0.9rem !important;
+    }
+    
+    .btn-close {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .alert {
+        margin: 0.4rem 3px !important;
+        padding: 0.6rem !important;
+    }
+    
+    .alert span {
+        font-size: 0.85rem !important;
+    }
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+</style>
