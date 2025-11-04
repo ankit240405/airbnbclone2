@@ -104,6 +104,7 @@ res.status(statusCode).render("error.ejs", {message});
 });
 
 
-app.listen(8080,()=>{
-    console.log("serverrr");
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+  console.log(`✅ Server running on port ${port}`);
 });
